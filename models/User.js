@@ -21,13 +21,13 @@ const UserSchema = new mongoose.Schema(
       default: false,
     },
   },
-  {
-    writeConcern: {
-      w: "majority",
-      j: true,
-      wtimeout: 1000,
-    },
-  },
+  // {
+  //   writeConcern: {
+  //     w: "majority",
+  //     j: true,
+  //     wtimeout: 1000,
+  //   },
+  // },
   { timestamps: true }
 );
 module.exports = mongoose.model("User", UserSchema);
