@@ -1,4 +1,5 @@
 const express = require("express");
+var bparser = require("body-parser");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -22,7 +23,8 @@ mongoose
 
 // use routes
 app.use(cors());
-app.use(express.json());
+app.use(bparser.json());
+// app.use(express.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);

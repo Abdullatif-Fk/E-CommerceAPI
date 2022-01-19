@@ -51,7 +51,7 @@ router.get("/find/:id", async (req, res) => {
     res.status(500).json(error);
   }
 });
-// // GET ALL Products
+// GET ALL Products
 router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
