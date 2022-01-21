@@ -9,6 +9,7 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
+const stripeRouter = require("./routes/stripe");
 const cors = require("cors");
 // Connection to mongoDB
 mongoose
@@ -30,6 +31,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/checkout", stripeRouter);
 
 app.listen(5000, () => {
   console.log("Backend srrver is running ");
